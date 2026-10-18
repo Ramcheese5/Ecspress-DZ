@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Экспресс-ДЗ — готовые домашние задания</title>
+  <meta name="description" content="Экспресс-ДЗ: фотографии с ответами на домашние задания по всем школьным предметам. Выбирай предмет — смотри решение.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-logo" aria-hidden="true">⚡</span>
+        <div class="brand-text">
+          <h1>Экспресс-ДЗ</h1>
+          <p>Ответы на домашку — в один клик</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="select-wrap">
+          <label class="select-label" for="subject-select">Предмет</label>
+          <div class="select-box">
+            <select id="subject-select" aria-label="Выберите предмет"></select>
+            <span class="select-chevron" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </div>
+        </div>
+        <button id="choose-btn" class="btn-choose" type="button">Выбрать</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="gallery-head">
+      <div class="gallery-title-row">
+        <h2 id="subject-title">Выберите предмет</h2>
+        <span class="count-badge" id="photo-count" hidden></span>
+      </div>
+      <p class="gallery-subtitle">Сверху — самые свежие фотографии. Внутри одной даты меньший номер выше.</p>
+    </div>
+
+    <section class="gallery" id="gallery" aria-label="Фотографии с ответами"></section>
+
+    <div class="empty-state" id="empty-state" hidden>
+      <div class="empty-icon" aria-hidden="true">📭</div>
+      <h3 id="empty-title">Пока нет ответов на задания</h3>
+      <p id="empty-text">Фотографии появятся здесь, как только их добавят.</p>
+    </div>
+  </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фотографии" hidden>
+    <div class="lightbox-backdrop" data-close></div>
+    <div class="lightbox-top">
+      <span class="lightbox-counter" id="lightbox-counter"></span>
+      <div class="lightbox-top-actions">
+        <a class="lb-btn" id="lightbox-origin" href="#" target="_blank" rel="noopener" title="Открыть оригинал" aria-label="Открыть оригинал в новой вкладке">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <button class="lb-btn" id="lightbox-close" type="button" title="Закрыть" aria-label="Закрыть">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+    <button class="lb-arrow lb-prev" id="lightbox-prev" type="button" aria-label="Предыдущее фото">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <figure class="lightbox-figure">
+      <img id="lightbox-img" src="" alt="Фотография домашнего задания">
+      <figcaption class="lightbox-caption" id="lightbox-caption"></figcaption>
+    </figure>
+    <button class="lb-arrow lb-next" id="lightbox-next" type="button" aria-label="Следующее фото">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </div>
+
+  <script src="manifest.js" charset="utf-8"></script>
+  <script src="script.js"></script>
+</body>
+</html>
